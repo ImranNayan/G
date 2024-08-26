@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Content Wrapper</title>
+<style>
+  slider item heading { display: block; padding-bottom: 20px; font-weight: bold; border-bottom: 1px solid rgba(0,0,0,0.1); margin: 0px -20px 15px; font-size: 16px; text-align: center; }
+  content { min-width: inherit !important;}
+</style>
+</head>
+
+<body>
+  <popup name="Open Dialog"><h2>Headline</h2>This is a simple popup dialog.<button b>Cancle</button><button id="close">OK</button></popup>
+  <theme color="mediumpurple" font="Consolas"></theme>
+  <div bg-#f4f5f6>
+    <div a-center bw-0><br><br><div fs-70px c-mediumpurple>Noksha</div><div fs-16px lh-1 c-lightslategrey>neno coding html framework</div></div>
+    
+    <br><br>
+      <code style="max-width: 600px; margin: 0 auto;">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title>Astro&lt;/title&gt;
+  &lt;theme color="blueviolet"&gt;&lt;/theme&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1 c-deeppink&gt;Hello World&lt;/h1&gt;
+&lt;/body&gt;
+&lt;script src="noksha.js"&gt;&lt;/script&gt;
+&lt;/html&gt;</code>
+    <br></div>
+    <visitor></visitor>
+<div pl-10px pr-10px>
+<br>
+  <h1><divider><divider>Data Display<hr></divider></h1>
+
+  <slider>
+    <item>
+      <heading>Layouts</heading>
+      3 Column Layout
+      <column><div bg-palegreen>Left Bar</div><content bg-paleturquoise>Content Goes Here</content><div bg-palegreen>Right Bar</div></column>
+      <code><column>
+  <div>Left Bar</div>
+  <content>Content Goes Here</content>
+  <div>Right Bar</div>
+</column></code>
+3 Colum Layout with header footer
+<header bg-lavender>Header</header>
+<column><div bg-palegreen>Left Bar</div><content bg-paleturquoise>Content Goes Here</content><div bg-palegreen>Right Bar</div></column>
+<footer bg-khaki>Footer</footer>
+<code><header>Header</header>
+<column>
+  <div>Left Bar</div>
+  <content>Content Goes Here</content>
+  <div>Right Bar</div>
+</column>
+<footer>Footer</footer></code>
+    </item>
+    <item>
+      <heading>Popup Dialog</heading>
+      <popup><button id="open">Open Popup</button><h2>Headline</h2><p>This is a simple popup dialog.</p><button b>Cancle</button><button id="close">OK</button></popup>
+      <code><popup>
+  <button id="open">Open Popup</button>
+  <h2>Headline</h2>
+  <p>This is a simple popup dialog.</p>
+  <button b>Cancle</button>
+  <button id="close">OK</button>
+</popup></code>
+    </item>
+    <item>
+      <heading>Get data from source</heading>
+      Display information from any site by a class name or id. If there is multiple class name in a page you can trigger that with position. Here is an example from CricBuzz Live Scores:<br><br><br>
+      <gsource query=".cb-lv-scrs-well" position="1">https://www.cricbuzz.com/cricket-match/live-scores/recent-matches</gsource>
+      <code><gsource query=".cb-lv-scrs-well" position="1">https://www.cricbuzz.com/cricket-match/live-scores/recent-matches</gsource></code>
+      <rss style="height: 300px; overflow: scroll; display: block;" url="http://www.bbc.co.uk/bengali/index.xml"><a href="[link]">[title]</a><br>[description]<br></rss>
+      <code><rss url="http://www.bbc.co.uk/bengali/index.xml"><a href="[link]">[title]</a><br>[description]<br></rss></code>
+    </item>
+    <item>
+      <heading>Display verius informations</heading>
+      <weather></weather> <weatherc></weatherc><code><weather></weather> <weatherc></weatherc></code>
+      <country></country> <ip></ip><code><country></country> <ip></ip></code>
+      <city></city>, <state></state><code><city></city>, <state></state></code>
+      <isp></isp><code><isp></isp></code>
+      <flag></flag><code><flag></flag></code>
+      <device></device> <battery></battery><code><device></device> <battery></battery></code>
+    </item>
+    <item>
+      <heading>Display Time & Date</heading>
+      <time>h:m:s am</time><code><time>h:m:s am</time></code>
+      <time>hh:mm:ss pm</time><code><time>hh:mm:ss pm</time></code>
+      <time>hhh:mmm:ssss</time><code><time>hhh:mmm:ssss</time></code>
+      <date>M/D/YY</date><code><date>M/D/YY</date></code>
+      <date>MM-DD-YY</date><code><date>MM-DD-YY</date></code>
+      <date>MMM-DDD-YY</date><code><date>MMM-DDD-YY</date></code>
+      <date>MMMM-DDDD-YYYY</date><code><date>MMMM-DDDD-YYYY</date></code>
+    </item>
+  </slider>
+
+  <h1><divider>Others<hr></divider></h1>
+
+  <slider>
+    <item>
+      <heading>Tabs</heading>
+      <tab><item name="Tab 1">This is the content for Tab 1.</item><item name="Tab 2">This is the content for Tab 2.</item></tab>
+      <code><tab>
+  <item name="Tab 1">This is the content for Tab 1.</item>
+  <item name="Tab 2">This is the content for Tab 2.</item>
+</tab></code>
+<tab bg-lavender><item name="Tab 1">This is the content for Tab 1.</item><item name="Tab 2" bg-khaki>This is the content for Tab 2.</item></tab>
+<code><tab bg-lavender>
+  <item name="Tab 1">This is the content for Tab 1.</item>
+  <item name="Tab 2" bg-khaki>This is the content for Tab 2.</item>
+</tab></code>
+    </item>
+    <item>
+      <heading>Dropdown</heading>
+      <dropdown name="Open in left">Left Align Dropdown</dropdown><code><dropdown name="Open in left">Left Align Dropdown</dropdown></code>
+      <dropdown name="Open in right" right>Right Align Dropdown</dropdown><code><dropdown name="Open in right" right>Right Align Dropdown</dropdown></code>
+      <dropdown name="Open in center" center>Center Align Dropdown</dropdown><code><dropdown name="Open in center" center>Center Align Dropdown</dropdown></code>
+      <dropdown name="Open in full" full>Full Width Dropdown</dropdown><code><dropdown name="Open in full" full>Full Width Dropdown</dropdown></code>
+    </item>
+    <item>
+      <heading>Chatbot</heading>
+      <chatbot button="Chatx" title="Personal AI" msg="Hi">"doing": "I'm doing well, thank you for asking!", "okey" : "how are you | how's it going | what's up"</chatbot>
+      <code><chatbot button="Chatx" title="Personal AI" msg="Hi">"doing": "I'm doing well, thank you for asking!", "okey" : "how are you | how's it going | what's up"</chatbot></code>
+      Question trigger <code>"who are you?": "I am a chatbot"</code>
+      Keyword trigger<code>"weather": "Today is sunny."</code>
+      Multiple keyword trigger<code>"how, you": "I am fine."</code>
+      Random answer for one question <code>"hi":"Hello | What's up | Hmm"</code>
+      Multiple question for one answer <code>"hi | hello | okey": "Yep"</code>
+      Multiple question for random answer <code>"hi | hello | okey": "Yep | Hmm"</code>
+    </item>
+    <item>
+      <heading>Share, Rating & QR</heading>
+      Share buttons
+      <share></share><code><share></share></code>
+      Five star rating:<br><star fs-20px>3</star><code><star>3</star></code>
+      Star rating custom color:<br><star fs-20px c-brown>4</star><code><star c-brown>4</star></code>
+      QR code scanner image: <qr>hello</qr> <code><qr>hello</qr></code>
+    </item>
+    <item>
+      <heading>Right click menu</heading>
+      <div>Simple contex menu (Right click)<contex-menu><item>Option 1</item><item>Option 2</item><item>Option 3</item></contex-menu></div>
+      <code><contex-menu>
+        <item>Option 1</item>
+        <item>Option 2</item>
+        <item>Option 3</item>
+</contex-menu></code>
+<div>Contex menu with hr and shortcut (Right click)<contex-menu w-200px><item>Option 1</item><hr><item><span>Option 2</span><span>Ctrl + 2</span></item><item>Option 3</item></contex-menu></div>
+  <code><contex-menu w-200px>
+    <item>Option 1</item><hr>
+    <item><span>Option 2</span><span>Ctrl + 2</span></item>
+    <item>Option 3</item>
+</contex-menu></code>
+    </item>
+  </slider>
+
+  <h1><divider>Styling<hr></divider></h1>
+
+  <slider>
+    <item>
+      <heading>General Items</heading>
+      <input type="text" placeholder="Input Box"><code><input type="text" placeholder="Input Box"></code>
+      <field type="text" placeholder="Animate Label" required></field><code><field type="text" placeholder="Animate Label" required></field></code>
+      <input type="checkbox"> Check Box<code><input type="checkbox"> Check Box</code>
+      <input type="radio">Radio Selection <code><input type="radio">Radio Selection</code>
+      <select><option>One</option><option>Two</option><option>Three</option></select><code><select><option>One</option><option>Two</option><option>Three</option></select></code>
+      <input type="date"/><code><input type="date"/></code>
+    </item>
+    <item>
+      <heading>Quick Styling</heading>
+      <div a-center>Text align center</div><code><div a-center>Text align center</div></code>
+      <div c-magenta>Text color magenta</div><code><div c-magenta>Text color magenta</div></code>
+      <div bg-khaki>Background color khaki</div><code><div bg-khaki>Background color khaki</div></code>
+      <div o-0.5>Opacity 0.5</div><code><div o-0.5>Opacity 0.5</div></code>
+      <div fs-20px>Font size 20px</div><code><div fs-20px>Font size 20px</div></code>
+      <div ff-cursive>Font family cursive</div><code><div ff-cursive>Font family cursive</div></code>
+    </item>
+    <item>
+      <heading>Quick styling referance</heading>
+      <table h-400px>
+        <tr><th>Name</th><th>Trigger</th></tr>
+        <tr><td>a</td><td>text-align</td></tr>
+        <tr><td>b</td><td>bottom</td></tr>
+        <tr><td>c</td><td>color</td></tr>
+        <tr><td>d</td><td>display</td></tr>
+        <tr><td>f</td><td>float</td></tr>
+        <tr><td>h</td><td>height</td></tr>
+        <tr><td>l</td><td>left</td></tr>
+        <tr><td>m</td><td>margin</td></tr>
+        <tr><td>o</td><td>opacity</td></tr>
+        <tr><td>p</td><td>padding</td></tr>
+        <tr><td>r</td><td>right</td></tr>
+        <tr><td>s</td><td>scale</td></tr>
+        <tr><td>t</td><td>top</td></tr>
+        <tr><td>w</td><td>width</td></tr>
+        <tr><td>v</td><td>visibility</td></tr>
+        <tr><td>z</td><td>z-index</td></tr>
+        <tr><td>ff</td><td>font-family</td></tr>
+        <tr><td>fs</td><td>font-size</td></tr>
+        <tr><td>bg</td><td>background</td></tr>
+        <tr><td>lh</td><td>line-height</td></tr>
+        <tr><td>bc</td><td>border-color</td></tr>
+        <tr><td>bw</td><td>border-width</td></tr>
+        <tr><td>bs</td><td>border-styel</td></tr>
+        <tr><td>br</td><td>border-radius</td></tr>
+        <tr><td>mt</td><td>margin-top</td></tr>
+        <tr><td>mr</td><td>margin-right</td></tr>
+        <tr><td>mb</td><td>margin-bottom</td></tr>
+        <tr><td>ml</td><td>margin-left</td></tr>
+        <tr><td>pt</td><td>padding-top</td></tr>
+        <tr><td>pb</td><td>padding-bottom</td></tr>
+        <tr><td>pr</td><td>padding-right</td></tr>
+        <tr><td>pl</td><td>padding-left</td></tr>
+      </table>
+    </item>
+    <item>
+      <heading>Fonts <a target="_blank" href="https://fonts.google.com">[Available Fonts]</a></heading>
+      <div font="ubuntu" a-center fs-20px>Welcome to ubuntu</div><code><div font="ubuntu">Hello World</div></code>
+      <div font="caveat" a-center fs-25px>This is my personal note</div><code><div font="caveat">Hello World</div></code>
+      <div font="rajdhani" a-center fs-20px>Rajdhani is the capital</div><code><div font="rajdhani">Hello World</div></code>
+      <div font="bellota" a-center fs-20px>Beautiful Flower</div><code><div font="bellota">Hello World</div></code>
+      <div font="titillium web" a-center fs-20px>The power of web</div><code><div font="titillium web">Hello World</div></code>
+    </item>
+    <item>
+      <heading>Color Code</heading>
+      &lt;code&gt; Your html code here &lt;/code&gt;
+<code><style>
+a {color: blue}
+b {color: green; font-size: 15px; padding: 50px 50px 50px;}
+</style>
+
+<a href="google.com">Okey</a>
+<div style="color: blue">Content</div>
+<div style="font-size: large;">hello</div>
+<br>
+<img src="okey"> hi <img>
+
+<script>
+document.getElementById("demo").innerHTML = 5 + 6;
+var x = 5 - 3;
+var y = 6; // Some comment
+var z = x + y;
+</script></code>
+    </item>
+    <item>
+      <heading>Background Image</heading>
+      Usage image="URL" to set a background image
+      <div image="https://cdn.pixabay.com/photo/2016/03/08/20/03/flag-1244648_960_720.jpg" h-300px><h1 c-white> Content here<hr></divider></h1></div>
+      <code><div image="https://cdn.pixabay.com/photo/2016/03/08/20/03/flag-1244648_960_720.jpg" h-300px>
+        <h1 c-white> Content here<hr></divider></h1>
+</div></code>
+    </item>
+    <item>
+      <heading>Paralax Effect</heading>
+      <lax src="https://www.w3schools.com/howto/img_nature_wide.jpg" height="350px"></lax>
+      <code><lax src="https://www.w3schools.com/howto/img_nature_wide.jpg" height="350px"></lax></code>
+    </item>
+  </slider>
+
+  <h1><divider>Accordion<hr></divider></h1>
+
+  <slider>
+    <item>
+      <heading>Accordion</heading>
+      <accordion><header>Section 1</header><content>Content for Section 1 goes here.</content><header>Section 2</header><content>Content for Section 2 goes here.</content></accordion>
+      <code><accordion>
+  <header>Section 1</header>
+  <content>Content for Section 1 goes here.</content>
+  <header>Section 2</header>
+  <content>Content for Section 2 goes here.</content>
+</accordion></code>
+    </item>
+    <item>
+      <heading>Accordion Custom Color</heading>
+      <accordion bg-seashell><header>Background color seashell</header><content>Content for Section 1 goes here.</content></accordion>
+      <code><accordion bg-seashell>
+  <header>Background color seashell</header>
+  <content>Content for Section 1 goes here.</content>
+</accordion></code>
+<br>
+<accordion><header bg-lavenderblush>Section color lavenderblush</header><content>Content for Section 1 goes here.</content><header bg-lemonchiffon>Section color lemonchiffon</header><content>Content for Section 1 goes here.</content></accordion>
+<code><accordion>
+<header bg-lavenderblush>Section color lavenderblush</header>
+<content>Content for Section 1 goes here.</content>
+<header bg-lemonchiffon>Section color lemonchiffon</header>
+<content>Content for Section 1 goes here.</content>
+</accordion></code>
+    </item>
+    <item>
+      <heading>Accordion with icon</heading>
+      <accordion>
+        <header><icon c-crimson>favorite</icon> Section 1</header><content>Content for Section 1 goes here.</content>
+        <header><icon c-darkorange>star</icon> Section 2</header><content>Content for Section 2 goes here.</content>
+        <header><icon c-forestgreen>check_circle</icon> Section 2</header><content>Content for Section 2 goes here.</content>
+      </accordion>
+<code><accordion>
+  <header><icon c-crimson>favorite</icon> Section 1</header>
+  <content>Content for Section 1 goes here.</content>
+  <header><icon c-darkorange>star</icon> Section 2</header>
+  <content>Content for Section 2 goes here.</content>
+  <header><icon c-forestgreen>check_circle</icon> Section 2</header>
+  <content>Content for Section 2 goes here.</content>
+</accordion></code>
+    </item>
+  </slider>
+
+  <h1><divider>Markdowns<hr></divider></h1>
+
+  <slider>
+    <item>
+      <heading>Markdown Headings</heading>
+      <md># Heading h1</md><code># Heading h1</code>
+      <md>## Heading h2</md><code>## Heading h2</code>
+      <md>### Heading h3</md><code>### Heading h3</code>
+      <md>#### Heading h4</md><code>#### Heading h4</code>
+    </item>
+    <item>
+      <heading>Markdown Text Formats</heading>
+      <md>Its *italic* also _italic_</md><code>Its *italic* also _italic_</code>
+      <md>Its **bold text**</md><code>Its **bold text**</code>
+      <md>Its ***bold italic text***</md><code>Its ***bold italic text***</code>
+      <md>This is a [Link](https://noksha.com) and **[Bold Link](https://noksha.com)**</md><code>This is a [Link](https://noksha.com) and **[Bold Link](https://noksha.com)**</code>
+      <md>This is __underline__</md><code>This is __underline__</code>
+      <md>Its ~~Strikethrough text~~</md><code>Its ~~Strikethrough text~~</code>
+    </item>
+    <item>
+      <heading>Markdown List</heading>
+<md>1. Item One
+2. Item Two
+3. Item Three</md>
+<code>1. Item One
+2. Item Two
+3. Item Three</code>
+<md>* Square List Item
++ Disc List Item
+- Circle List Item</md>
+<code>* Square List Item
++ Disc List Item
+- Circle List Item</code>
+    </item>
+    <item>
+      <heading>Markdown General</heading>
+      Image: <md>![](https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Markdown-mark.svg/64px-Markdown-mark.svg.png)</md><code>![](https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Markdown-mark.svg/64px-Markdown-mark.svg.png)</code>
+      Horizontal line: <md>---</md><code>---</code>
+      <md>> This is a Block Quote</md><code>> This is a Block Quote</code>
+      `Code block with backtick`<code>`Code block with backtick`</code>
+    </item>
+  </slider>
+
+  <h1><divider>Icons<hr></divider></h1>
+
+  <slider>
+    <item>
+      <heading>Icons <a target="_blank" href="https://fonts.google.com/icons?icon.style=Rounded&icon.set=Material+Icons">[Available icons]</a></heading>
+      <div fs-20px> <icon>schedule</icon> <icon c-#f4b80e>lightbulb</icon> <icon c-#007bff>verified</icon> <icon c-#4b5556>print</icon> <icon c-#f2008a>feedback</icon> <icon c-#a4c639>android</icon></div>
+      <icon>home</icon> Home icon<code><icon>home</icon> Home icon</code>
+      <icon c-red>favorite</icon> Colorfull icon<code><icon c-red>favorite</icon> Colorfull icon</code>
+      <div fs-30px><icon>grade</icon> Large icon</div><code><div fs-30px><icon>grade</icon>Large icon</div></code>
+    </item>
+    <item>
+      <heading>Icons outline <a target="_blank" href="https://fonts.google.com/icons?icon.style=Rounded&icon.set=Material+Symbols">[Available icons]</a></heading>
+      <icon-o>home</icon-o> Home outline icon<code><icon-o>home</icon-o> Home outline icon</code>
+      <icon-o c-orange>menu</icon-o> Colorfull icon<code><icon-o c-orange>menu</icon-o> Colorfull icon</code>
+      <div fs-30px><icon-o>settings</icon-o> Large icon</div><code><div fs-30px><icon-o>settings</icon-o>Large icon</div></code>
+    </item>
+  </slider>
+
+  <h1><divider>Buttons<hr></divider></h1>
+
+  <slider>
+    <item>
+      <heading>Buttons</heading>
+      <button>Default Button</button><code><button>Default Button</button></code>
+      <button g>Gradient Button</button><code><button g>Gradient Button</button></code>
+      <button d>Depth Button</button><code><button d>Depth Button</button></code>
+      <button o>Outline Button</button><code><button o>Outline Button</button></code>
+      <button f>Faded Button</button><code><button f>Faded Button</button></code>
+    </item>
+  </slider>
+
+  <h1><divider>Alerts<hr></divider></h1>
+
+  <slider>
+    <item>
+      <heading>Alert Templates</heading>
+      <alert s>Success text</alert><code><alert s>Success text</alert></code>
+      <alert i>Info text</alert><code><alert i>Info text</alert></code>
+      <alert w>Warning text</alert><code><alert w>Warning text</alert></code>
+      <alert e>Error text</alert><code><alert e>Error text</alert></code>
+    </item>
+    <item>
+      <heading>Alert No Border</heading>
+      <alert s bw-0>Success text</alert><code><alert s bw-0>Success text</alert></code>
+      <alert i bw-0>Info text</alert><code><alert i bw-0>Info text</alert></code>
+      <alert w bw-0>Warning text</alert><code><alert w bw-0>Warning text</alert></code>
+      <alert e bw-0>Error text</alert><code><alert e bw-0>Error text</alert></code>
+    </item>
+    <item>
+      <heading>Alert Custom Color</heading>
+      <alert>Theme color</alert><code><alert>Theme color</alert></code>
+      <alert><icon>lightbulb</icon>Custom icon</alert><code><alert><icon>lightbulb</icon>Custom icon</alert></code>
+      <alert bg-linen><icon c-magenta>beenhere</icon>Custom color</alert><code><alert bg-linen> <icon c-magenta>beenhere</icon>Custom color</alert></code>
+    </item>
+  </slider>
+
+  <!-- 
+<h1><divider>Graphs<hr></divider></h1>
+  <slider>
+    <item>
+      <heading>Graph: Area</heading>
+      <graph type="a">apple: 10, egg: 8, chake: 12, brush: 5, paste: 30</graph>
+      <code><graph type="a">apple: 10, egg: 8, chake: 12, brush: 5, paste: 30</graph></code>
+    </item>
+    <item>
+      <heading>Graph: Bar</heading>
+      <graph type="b">apple: 10, egg: 8, chake: 12, brush: 5, paste: 30</graph>
+      <code><graph type="b">apple: 10, egg: 8, chake: 12, brush: 5, paste: 30</graph></code>
+    </item>
+    <item>
+      <heading>Graph: Pie</heading>
+      <graph type="c">apple: 10, egg: 8, chake: 12, brush: 5, paste: 30</graph>
+      <code><graph type="c">apple: 10, egg: 8, chake: 12, brush: 5, paste: 30</graph></code>
+    </item>
+    <item>
+      <heading>Graph: Donut</heading>
+      <graph type="d">apple: 10, egg: 8, chake: 12, brush: 5, paste: 30</graph>
+      <code><graph type="d">apple: 10, egg: 8, chake: 12, brush: 5, paste: 30</graph></code>
+    </item>
+    <item>
+      <heading>Graph: Line</heading>
+      <graph type="e">apple: 10, egg: 8, chake: 12, brush: 5, paste: 30</graph>
+      <code><graph type="e">apple: 10, egg: 8, chake: 12, brush: 5, paste: 30</graph></code>
+    </item>
+    <item>
+      <heading>Graph: Radar</heading>
+      <graph type="f">apple: 10, egg: 8, chake: 12, brush: 5, paste: 30</graph>
+      <code><graph type="f">apple: 10, egg: 8, chake: 12, brush: 5, paste: 30</graph></code>
+    </item>
+    <item>
+      <heading>Graph: radialBar</heading>
+      <graph type="g">apple: 10, egg: 8, chake: 12, brush: 5, paste: 30</graph>
+      <code><graph type="g">apple: 10, egg: 8, chake: 12, brush: 5, paste: 30</graph></code>
+    </item>
+  </slider>
+
+  <h1><divider>Chart Image<hr></divider></h1>
+
+  <slider>
+    <item>
+      <heading>Chart Image: Bar</heading>
+      <chart type="a">title: Saturday, Sunday, Monday. Users: 100, 400, 300. Revenue: 50, 200, 150. Orders: 30, 40, 50</chart>
+      <code><chart type="a">
+  title: Saturday, Sunday, Monday.
+  Users: 100, 400, 300.
+  Revenue: 50, 200, 150.
+  Orders: 30, 40, 50
+</chart></code>
+    </item>
+    <item>
+      <heading>Chart Image: line</heading>
+      <chart type="b">title: Saturday, Sunday, Monday. Users: 100, 400, 300. Revenue: 50, 200, 150. Orders: 30, 40, 50</chart>
+      <code><chart type="b">
+  title: Saturday, Sunday, Monday.
+  Users: 100, 400, 300.
+  Revenue: 50, 200, 150.
+  Orders: 30, 40, 50
+</chart></code>
+    </item>
+    <item>
+      <heading>Chart Image: pie</heading>
+      <chart type="c">title: Saturday, Sunday, Monday. Users: 100, 400, 300. Revenue: 50, 200, 150. Orders: 30, 40, 50</chart>
+      <code><chart type="c">
+  title: Saturday, Sunday, Monday.
+  Users: 100, 400, 300.
+  Revenue: 50, 200, 150.
+  Orders: 30, 40, 50
+</chart></code>
+    </item>
+    <item>
+      <heading>Chart Image: doughnut</heading>
+      <chart type="d">title: Saturday, Sunday, Monday. Users: 100, 400, 300. Revenue: 50, 200, 150. Orders: 30, 40, 50</chart>
+      <code><chart type="d">
+  title: Saturday, Sunday, Monday.
+  Users: 100, 400, 300.
+  Revenue: 50, 200, 150.
+  Orders: 30, 40, 50
+</chart></code>
+    </item>
+    <item>
+      <heading>Chart Image: polarArea</heading>
+      <chart type="e">title: Saturday, Sunday, Monday. Users: 100, 400, 300. Revenue: 50, 200, 150. Orders: 30, 40, 50</chart>
+      <code><chart type="e">
+  title: Saturday, Sunday, Monday.
+  Users: 100, 400, 300.
+  Revenue: 50, 200, 150.
+  Orders: 30, 40, 50
+</chart></code>
+    </item>
+    <item>
+      <heading>Chart Image: radar</heading>
+      <chart type="f">title: Saturday, Sunday, Monday. Users: 100, 400, 300. Revenue: 50, 200, 150. Orders: 30, 40, 50</chart>
+      <code><chart type="f">
+  title: Saturday, Sunday, Monday.
+  Users: 100, 400, 300.
+  Revenue: 50, 200, 150.
+  Orders: 30, 40, 50
+</chart></code>
+    </item>
+    <item>
+      <heading>Chart Image: violin</heading>
+      <chart type="g">title: Saturday, Sunday, Monday. Users: 100, 400, 300. Revenue: 50, 200, 150. Orders: 30, 40, 50</chart>
+      <code><chart type="g">
+  title: Saturday, Sunday, Monday.
+  Users: 100, 400, 300.
+  Revenue: 50, 200, 150.
+  Orders: 30, 40, 50
+</chart></code>
+    </item>
+    <item>
+      <heading>Chart Image: radialGauge</heading>
+      <chart type="h">title: Saturday, Sunday, Monday. Users: 100, 400, 300. Revenue: 50, 200, 150. Orders: 30, 40, 50</chart>
+      <code><chart type="h">
+  title: Saturday, Sunday, Monday.
+  Users: 100, 400, 300.
+  Revenue: 50, 200, 150.
+  Orders: 30, 40, 50
+</chart></code>
+    </item>
+    <item>
+      <heading>Chart Image: progressBar</heading>
+      <chart type="i">title: Saturday, Sunday, Monday. Users: 100, 400, 300</chart>
+      <code><chart type="i">
+    title: Saturday, Sunday, Monday.
+    Users: 100, 400, 300
+</chart></code>
+    </item>
+        <item>
+      <heading>Embed Videos</heading>
+      <video src="https://www.youtube.com/watch?v=yVYQeDhAQWk"></video>
+      <video src="https://www.dailymotion.com/video/x84sh87"></video>
+      <video src="https://www.ted.com/talks/brene_brown_the_power_of_vulnerability"></video>
+      <video src="https://www.facebook.com/100053517092896/videos/698579944290337/"></video>
+      <video src="https://vimeo.com/49583118"></video>
+      <video src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"></video>
+    </item>
+  </slider>
+-->
+</div>
+  <script src="noksha.js"></script>
+</body>
+</html> 
